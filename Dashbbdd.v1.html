@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+
+<head> 
+    
+  <title>DATA</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta id="decription" content="y bendito es el fruto de tu vientre jesus,santa maria madre de"/>
+  <meta name="keywords"content="diseño, desarrollo, paginas web" />
+  <link rel="icon" type="favicon" href="favicon.png">      
+  <link href="amin.scss" rel="stylesheet/scss" type="text/css">
+  <link href="SotcksStyles_dashboard.css" rel="stylesheet" type="text/css">
+  <link href="SotcksStyles_header.css" rel="stylesheet" type="text/css">  
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+  <script src="" type="text/javascript" charset="utf-8" async defer></script>
+  <script src="DashCharts.v4.js" type="text/javascript" charset="utf-8" async defer></script> 
+  <script src="Dashbb.php" type="text/javascript" charset="utf-8" async defer></script> 
+
+</head>
+
+<body>
+    <header>
+    <div class=container-fluid id="horizontal-scroll-wrapper squares">
+      <nav class="navbar navbar-expand-sm navbar-light bg-light d-flex">
+          <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarMenu">
+          <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarMenu">
+          <ul class="navbar-nav">
+            <li class="col-2 nav-item">
+              <a  href="index.html" class="nav-link">Dashboard</a>
+            </li>
+            <li class="col-2 nav-item">
+              <a  href="pagina1_indicadores.html" class="nav-link">Indicadores</a>
+            </li>
+            <li class="col-2 border:none" type="button" id="dropdown">
+              <a  href="pagina3_españa.html" class="nav-link">España</a>
+                <!--     dropdown-toggle navbae-light bg-light d-flex text-dark aria-haspopup="true" aria-expanded="false" id="dropdownMenuLink"  data-toggle="dropdown" 
+                                <ul>
+                                 <li class="dropdown-menu navdrop  bg-light text-dark" aria-labelledby="dropdownmenulink"  id="dropdown">
+                      <a  class= "dropdown-item" href="#" class="nav-link"></a>
+                    </li>
+                </ul>    -->  
+            </li>
+          </ul>
+          </div>
+      </nav> 
+    </div>
+  </header>
+<center>
+<h3>FORMULARIO</h3>
+<FORM method="post" action="<?php echo $_SERVER['http://localhost/phpmyadmin4.9.7/sql.php?db=ineapi&table=apine&pos=0'];?>">
+<table width="200" border="0" cellspacing="0" cellpadding="7">
+<tr>
+<td width="86">&nbsp;</td>
+<td width="110" align="right" valign="bottom"><a href="http://google.es"><font size="-3"> REGISTRARSE</font></a></td>
+</tr>
+<tr>
+<td>Nombre</td>
+<td><input type="text" name="nombre" value="usuario" maxlength="10"></td>
+</tr>
+<tr>
+<td>Contraseña</td>
+<td><input type="password" name="contraseña" value="password"></td>
+</tr>
+<tr>
+<td align="right"><input type="checkbox" name="conectado" value="SI" CHECKED></td>
+<td>Mantenerse conectado</td>
+</tr>
+</table>
+<input type="submit" value="Enviar">
+</FORM>
+</center>
+
+<body>
+
+<?php
+$nom=$_POST['nombre'];
+$pass=$_POST['contraseña'];
+$conect=$_POST['conectado'];
+
+if ($conect!="SI") {
+$conect="NO";
+}
+
+$missatge=sprintf("Nombre: %s\nContraseña: %s\nHas decidido que %s quieres estar conectado\n",$nom,$pass,$conect);
+
+printf("<p>Este es el mensaje: %s</p>",$missatge);
+?>
+
+  <div id = "dashboard"  class="row w-100 h-100" >
+
+
+              <div class="row row1 w-100" id="rowdash0">         
+                  <div class="col-6">
+                      <div class="row row11 w-100" id="rowdash1">
+                          <div class="col-12" id="table2"></div> 
+                          <h1>Hola qué tal</h1>
+                      </div>    
+
+                  <div class="col-6">
+                      <div id="chart2" style="width:100%; height:100%;"></div>
+                      <div class="overlay">
+                          <div id="Paro"></div>
+                          <div id="paro_number"></div>
+                      </div>  
+                  </div>
+              </div>
+
+
+
+</body>
+
+<footer class="page-footer font-small blue pt-4">
+    <div class="row-foot container-fluid text-center text-md-left" id="foot">
+        <h4 class="col-12 typos" id="foot" style='opacity:0; transition: all 0.5s;'>Este sitio no tiene fines lucrativos. Su único próposito es informar.</h4>
+        <script src="typingfoot.js" type="text/javascript" charset="utf-8" async defer></script> 
+    </div>
+
+
+
+</footer>
+
+
+</html>

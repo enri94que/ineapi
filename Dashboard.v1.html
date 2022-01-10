@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+
+<head> 
+    
+  <title>DATA</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta id="decription" content="y bendito es el fruto de tu vientre jesus,santa maria madre de"/>
+  <meta name="keywords"content="diseño, desarrollo, paginas web" />
+  <link rel="icon" type="favicon" href="favicon.png">      
+  <link href="amin.scss" rel="stylesheet/scss" type="text/css">
+  <link href="SotcksStyles_dashboard.css" rel="stylesheet" type="text/css">
+  <link href="SotcksStyles_header.css" rel="stylesheet" type="text/css">  
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+  <script src="" type="text/javascript" charset="utf-8" async defer></script>
+  <script src="DashCharts.v4.js" type="text/javascript" charset="utf-8" async defer></script> 
+  <script src="Dashbb.php" type="text/javascript" charset="utf-8" async defer></script> 
+
+</head>
+
+<body>
+    <header>
+    <div class=container-fluid id="horizontal-scroll-wrapper squares">
+      <nav class="navbar navbar-expand-sm navbar-light bg-light d-flex">
+          <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarMenu">
+          <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarMenu">
+          <ul class="navbar-nav">
+            <li class="col-2 nav-item">
+              <a  href="index.html" class="nav-link">Dashboard</a>
+            </li>
+            <li class="col-2 nav-item">
+              <a  href="pagina1_indicadores.html" class="nav-link">Indicadores</a>
+            </li>
+            <li class="col-2 border:none" type="button" id="dropdown">
+              <a  href="pagina3_españa.html" class="nav-link">España</a>
+                <!--     dropdown-toggle navbae-light bg-light d-flex text-dark aria-haspopup="true" aria-expanded="false" id="dropdownMenuLink"  data-toggle="dropdown" 
+                                <ul>
+                                 <li class="dropdown-menu navdrop  bg-light text-dark" aria-labelledby="dropdownmenulink"  id="dropdown">
+                      <a  class= "dropdown-item" href="#" class="nav-link"></a>
+                    </li>
+                </ul>    -->  
+            </li>
+          </ul>
+          </div>
+      </nav> 
+    </div>
+  </header>
+
+
+  <div class="row row1 w-100" id="row1">
+        <div class="col-12 trading-widget" draggable= "true" id="trading-widget" style="z-index:-1;" >   
+                                      <!-- TradingView Widget BEGIN -->
+             <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-tickers.js" async>
+            {
+            "symbols": [
+              {
+                "proName": "FOREXCOM:SPXUSD",
+                "title": "S&P 500"
+              },
+              {
+                "proName": "FOREXCOM:NSXUSD",
+                "title": "Nasdaq 100"
+              },
+              {
+                "description": "DAX 30",
+                "proName": "CURRENCYCOM:DE30"
+              },
+              {
+                "description": "CAC 40",
+                "proName": "INDEX:CAC40"
+              },
+              {
+                "description": "FTSE MIB",
+                "proName": "INDEX:FTSEMIB"
+              },
+              {
+                "description": "NIKKEI",
+                "proName": "INDEX:NKY"
+              }
+            ],
+            "colorTheme": "light",
+            "isTransparent": true,
+            "locale": "es"
+          }
+            </script>
+          <!-- TradingView Widget END -->
+        </div>        
+    </div>
+
+
+  <div id = "dashboard"  class="row w-100 h-100" >
+              <div class="row w-100 row0" id="rowdash1" style="height:85px; float: down"> 
+                  <div class="col-12">   
+                        <div id="controlA" style="height:40%;"></div>
+                  </div>
+              </div>
+
+              <div class="row row1 w-100" id="rowdash0">         
+                  <div class="col-6">
+                      <div class="row row11 w-100" id="rowdash1">
+                          <div class="col-12" id="table2"></div> 
+                      </div>    
+                      <div class="row row12 w-100" id="rowdash1">                                            
+                          <div id="chart1" style="width:100%; height:100%;"></div>
+                          <div class="overlay">                          
+                              <div id="PIB"></div>
+                              <div id="pib_number" class="last_numbers"></div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-6">
+                      <div id="chart2" style="width:100%; height:100%;"></div>
+                      <div class="overlay">
+                          <div id="Paro"></div>
+                          <div id="paro_number"></div>
+                      </div>  
+                  </div>
+              </div>
+
+              <div class="row row2 w-100" id="rowdash0">  
+                  <div class="col-6">
+                      <div id="chart3" style="width:100%; height:100%;"></div>
+                      <div class="overlay">                                           
+                          <div id="ICNE"></div>
+                          <div id="icne_number" class="last_numbers"></div>
+                      </div>                                                                          
+                  </div>                     
+                  <div class="col-6">
+                      <div id="chart4" style="width:100%; height:100%;"></div> 
+                      <div class="overlay">                    
+                            <div id="IPC" class="overlay_title_title"></div>
+                            <div id="ipc_number" class="last_numbers"></div>
+                      </div>                     
+                  </div>  
+              </div>
+
+              <div class="row row3 w-100" id="rowdash0">  
+                      <div class="col-6">
+                          <div id="chart5" style="width:100%; height:100%;"></div>  
+                          <div class="overlay"></div>
+                      </div>                     
+                      <div class="col-6">
+                          <div id="chart6" style="width:100%; height:100%;"></div>                          
+                            <div class="overlay">                        
+                                <div class="overlay_title"></div>
+                                <div id="_number"></div>
+                            </div>
+                      </div>  
+              </div>
+          <br>
+              <div class="row row4 w-100" id="">  
+                  <div class="col-12" id="rowss"></div>                      
+              </div> 
+              <div class="row row4 w-100" id="">  
+                  <div class="col-2" id="rowsa1"></div>
+                  <div class="col-2" id="rowsa2"></div>               
+                  <div class="col-2" id="rowsa3"></div>               
+                  <div class="col-2" id="rowsa4"></div>               
+                  <div class="col-2" id="rowsa5"></div>               
+                  <div class="col-2" id="rowsa6"></div>                                                                                                                        
+              </div> 
+              
+              <div class="row row4 w-100" id="rowdash0">  
+                  <div class="col-12" id="table1"></div>                      
+              </div>   
+  </div>
+          <br>        <br>
+               <div class="row row5 w-100" id="rowdash4">  
+                 
+              </div>          
+
+</body>
+
+<footer class="page-footer font-small blue pt-4">
+    <div class="row-foot container-fluid text-center text-md-left" id="foot">
+        <h4 class="col-12 typos" id="foot" style='opacity:0; transition: all 0.5s;'>Este sitio no tiene fines lucrativos. Su único próposito es informar.</h4>
+        <script src="typingfoot.js" type="text/javascript" charset="utf-8" async defer></script> 
+    </div>
+
+
+
+</footer>
+
+
+</html>
